@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        double productCost = 9.99;
+        double vatRate = 0.05;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        double vatAmount = productCost * vatRate;
+
+        int unitsSold = 10000;
+        double totalNetValue = 0.0;
+        double totalVatAmount = 0.0;
+        double totalGrossValue = 0.0;
+
+        for (int i = 0; i < unitsSold; i++) {
+            totalNetValue += productCost;
+            totalVatAmount += vatAmount;
+            totalGrossValue += (productCost + vatAmount);
         }
+
+        System.out.println("Single Unit Net: " + productCost);
+        System.out.println("Single Unit VAT: " + vatAmount);
+        System.out.println("Total Net Sales: " + totalNetValue);
+        System.out.println("Total VAT Amount: " + totalVatAmount);
+        System.out.println("Total Gross Value: " + totalGrossValue);
     }
 }
